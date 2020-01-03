@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation"
+		value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.custom.i18n.resources"
+		value="ApplicationResources" />
+
+	<package name="default" extends="struts-default" namespace="/">
+		<action name="login"
+			class="com.cts.integration.ui.action.ServiceValidatorAction" method="login">
+			<result name="success">Welcome.jsp</result>
+			<result name="error">Login.jsp</result>
+		</action>
+		<action name="save"
+			class="com.cts.integration.ui.action.ServiceValidatorAction" method="save">
+			<result name="success">Welcome.jsp</result>
+			<result name="error">Welcome.jsp</result>
+		</action>
+		<action name="delete"
+			class="com.cts.integration.ui.action.ServiceValidatorAction" method="delete">
+			<result name="success">Welcome.jsp</result>
+			<result name="error">Welcome.jsp</result>
+		</action>
+		<action name="add"
+			class="com.cts.integration.ui.action.ServiceValidatorAction" method="add">
+			<result name="success">Welcome.jsp</result>
+			<result name="error">Welcome.jsp</result>
+		</action>
+		<action name="executeTest"
+			class="com.cts.integration.ui.action.ServiceValidatorAction" method="executeTest">
+			<result name="success">LogResult.jsp</result>
+			<result name="error">LogResult.jsp</result>
+		</action>
+		<action name="executeDisplay"
+			class="com.cts.integration.ui.action.ServiceValidatorAction" method="executeDisplay">
+			<result name="success">ExecuteDisplay.jsp</result>
+			<result name="error">ExecuteDisplay.jsp</result>
+		</action>
+		<action name="downloadReportByName"
+			class="com.cts.integration.ui.action.ServiceValidatorAction" method="downloadReportByName">
+			<result name="success" type="stream">
+			  <param name="contentType">application/octet-stream</param>
+			  <param name="inputName">reportInputStream</param>
+			  <param name="contentDisposition">attachment;filename="report"</param>
+			  <param name="bufferSize">1024</param>
+			</result>
+		</action>
+		<action name="loadReports"
+			class="com.cts.integration.ui.action.ServiceValidatorAction" method="displayReportPage">
+			<result name="success">AllReports.jsp</result>
+			<result name="error">AllReports.jsp</result>
+		</action>
+		<action name="currentReport"
+			class="com.cts.integration.ui.action.ServiceValidatorAction" method="currentReport">
+			<result name="success">CurrentReport.jsp</result>
+			<result name="error">CurrentReport.jsp</result>
+		</action>
+		<action name="showInfo"
+			class="com.cts.integration.ui.action.ServiceValidatorAction" method="showInfo">
+			<result name="success">ShowInfo.jsp</result>
+			<result name="error">ShowInfo.jsp</result>
+		</action>
+		<action name="loadProtocolProperties"
+			class="com.cts.integration.ui.action.PropertiesAction" method="loadProtocol">
+			<result name="success">ProtocolProperties.jsp</result>
+			<result name="error">ProtocolProperties.jsp</result>
+		</action>
+		<action name="saveProtocol"
+			class="com.cts.integration.ui.action.PropertiesAction" method="saveProtocol">
+			<result name="success">ProtocolProperties.jsp</result>
+			<result name="error">ProtocolProperties.jsp</result>
+		</action>
+		<action name="reloadProperties"
+			class="com.cts.integration.ui.action.PropertiesAction" method="reloadProperties">
+			<result name="success">ProtocolProperties.jsp</result>
+			<result name="error">ProtocolProperties.jsp</result>
+		</action>
+		<action name="loadSecurityProperties"
+			class="com.cts.integration.ui.action.SecurityAction" method="loadSecurityProperties">
+			<result name="success">SecurityProperties.jsp</result>
+			<result name="error">SecurityProperties.jsp</result>
+		</action>
+		<action name="saveSecurityProperties"
+			class="com.cts.integration.ui.action.SecurityAction" method="saveSecurityProperties">
+			<result name="success">SecurityProperties.jsp</result>
+			<result name="error">SecurityProperties.jsp</result>
+		</action>
+		<action name="reloadSecurityProperties"
+			class="com.cts.integration.ui.action.SecurityAction" method="reloadSecurityProperties">
+			<result name="success">SecurityProperties.jsp</result>
+			<result name="error">SecurityProperties.jsp</result>
+		</action>
+		
+		<action name="loadData"
+			class="com.cts.integration.ui.action.DataAction" method="load">
+			<result name="success">Data.jsp</result>
+			<result name="error">Data.jsp</result>
+		</action>
+		<action name="saveData"
+			class="com.cts.integration.ui.action.DataAction" method="save">
+			<result name="success">Data.jsp</result>
+			<result name="error">Data.jsp</result>
+		</action>
+		<action name="downloadData"
+			class="com.cts.integration.ui.action.DataAction" method="download">
+			<result name="success" type="stream">
+			  <param name="contentType">application/octet-stream</param>
+			  <param name="inputName">downLoadInputStream</param>
+			  <param name="contentDisposition">attachment;filename="testdata"</param>
+			  <param name="bufferSize">1024</param>
+			</result>
+		</action>
+		
+	</package>
+</struts>
